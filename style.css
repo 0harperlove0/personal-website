@@ -1,0 +1,88 @@
+.title{
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+  width: 400px;
+  height: auto;
+}
+
+body{
+    color: rgb(52, 53, 71);
+    font-size: 20px;
+    background: rgb(238, 239, 246);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(59, 110, 229) ;
+}
+
+::selection {
+  background-color:rgb(238, 239, 246);
+  color:rgb(53, 72, 245);
+}
+
+.header h2{
+    font-weight:none;
+}
+
+.footer h4{
+    font-weight:none;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3.5fr;
+  gap: 3px;
+  padding: 0px;
+}
+.container div {
+  padding: 10px;
+}
+.container div.header {
+  grid-area: header;
+  text-align: center;
+}
+.container div.menu {
+  grid-area: menu;
+  margin-left: 80px;
+  line-height: 50px;
+  margin-top: 30px;
+}
+
+.menu a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgb(52, 53, 71); /* default underline color */
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.menu a:hover {
+  color: rgb(59, 110, 229);
+  text-decoration-color: rgb(59, 110, 229); /* underline changes too */
+}
+
+.container div.content {
+  grid-area: content;
+  line-height: 25px;
+  margin-right: 400px;
+  margin-left: 100;
+}
+.container div.footer {
+  grid-area: footer;
+  margin-left:1200px; 
+}
