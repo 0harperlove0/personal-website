@@ -2,7 +2,7 @@
 const videos = [
   {
     hoverSwap: true,
-    sources: ["images/ice.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/ice.mp4", "images/fish3.mp4"]
   },
   {
     hoverSwap: false,
@@ -11,7 +11,7 @@ const videos = [
 
   {
     hoverSwap: true,
-    sources: ["images/water3.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/water3.mp4", "images/fish3.mp4"]
   },
   {
     hoverSwap: false,
@@ -20,7 +20,7 @@ const videos = [
 
   {
     hoverSwap: true,
-    sources: ["images/plants.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/plants.mp4", "images/fish3.mp4"]
   },
   {
     hoverSwap: false,
@@ -33,7 +33,7 @@ const videos = [
 
   {
     hoverSwap: true,
-    sources: ["images/fish.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/fish.mp4", "images/fish3.mp4"]
   },
   {
     hoverSwap: false,
@@ -42,7 +42,7 @@ const videos = [
 
   {
     hoverSwap: true,
-    sources: ["images/birds.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/birds.mp4", "images/fish3.mp4"]
   },
   {
     hoverSwap: false,
@@ -51,11 +51,11 @@ const videos = [
 
   {
     hoverSwap: true,
-    sources: ["images/sky3.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/sky3.mp4", "images/fish3.mp4"]
   },
  {
     hoverSwap: true,
-    sources: ["images/swan.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/swan.mp4", "images/fish3.mp4"]
   },
   {
     hoverSwap: false,
@@ -64,7 +64,7 @@ const videos = [
 
   {
     hoverSwap: true,
-    sources: ["images/trees2.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/trees2.mp4", "images/fish3.mp4"]
   },
   {
     hoverSwap: false,
@@ -73,19 +73,27 @@ const videos = [
 
   {
     hoverSwap: true,
-    sources: ["images/waves.mp4", "images/yellowflowers.mp4"]
+    sources: ["images/waves.mp4", "images/fish3.mp4"]
   },
   {
     hoverSwap: false,
-    src: "images/water2.mp4"
-  }
+    src: "images/water2.mp4",
+    link: "homepage.html"
+  },
   
 ];
 
 const grid = document.getElementById("grid");
 
 videos.forEach(v => {
-  const tile = document.createElement("div");
+  const tile = v.link 
+  ? document.createElement("a") 
+  : document.createElement("div");
+
+if (v.link) {
+  tile.href = v.link;
+  tile.target = "_blank"; // optional: opens in new tab
+}
   tile.className = "tile";
 
   // If hoverSwap enabled → create 2 layered videos
@@ -103,6 +111,9 @@ videos.forEach(v => {
 
     vidA.src = v.sources[0];
     vidB.src = v.sources[1];
+
+    vidA.style.opacity = "1";
+    vidB.style.opacity = "0";
 
     tile.appendChild(vidA);
     tile.appendChild(vidB);

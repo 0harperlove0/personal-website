@@ -36,3 +36,9 @@ body {
   transition: opacity 0.4s ease;
   pointer-events: none; /* prevents hover flicker issues */
 }
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  display: block; /* important if it's an <a> */
+}

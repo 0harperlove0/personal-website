@@ -4,36 +4,149 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Harper Love</title>
-   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
+  <body class="home">
 
-<div class="container">
-  <div class="header"><h2>
-  </h2></div>
-  <div class="menu">
-     <a href="#">Home</a><br>
-     <a href="#">About</a><br>
-    <a href="#">Music</a><br>
-    <a href="#">Lyrics</a><br>
-    <a href="#">Writing</a><br>
-    <a href="#">Video</a><br>
-    </div>
-    <br>
-  <div class="content">
-    <p>
-        <div class="title"> HARPER LOVE </div>
-        <br>
-         <img src="images/harper2.jpg"><br> <br>
+    <div class="container">
       
-    </p></div>
-  <div class="footer">
-    <h4>// harper.love@yale.edu<br>
-       // IG: @hhharrperrr
-    </h4>
-</div>
+      <div class="header">
+        <h2></h2>
+      </div>
 
-</body>
+      <div class="menu">
+        <a href="#" data-page="home">Home</a><br>
+        <a href="#" data-page="about">About</a><br>
+        <a href="#" data-page="music">Music</a><br>
+        <a href="#" data-page="lyrics">Lyrics</a><br>
+        <a href="#" data-page="writing">Writing</a><br>
+        <a href="#" data-page="video">Video</a><br>
+      </div>
 
+      <!-- SCROLLABLE CONTENT -->
+      <div class="content" id="content">
+        <div class="title">HARPER LOVE</div>
+        <br>
+        <br> Text here saying may things. Writing sentences in a satisfying shape<br>
+        Many things going on here. My name is Harper, introduce yourself.<br>
+        Try to convey a bit of mystery, but don't be too on the nose.<br><br>
+        More things to say? Maybe.<br>
+        Let's come up with some more things to say, things that function as decoration.
+      </div>
+
+      <div class="footer">
+        <h4>
+          // harper.love@yale.edu<br>
+          // IG: @hhharrperrr
+        </h4>
+      </div>
+
+    </div>
+
+    <!-- ✅ JAVASCRIPT -->
+    <script>
+      const content = document.getElementById("content");
+
+      const pages = {
+        home: {
+          html: `
+            <div class="title">HARPER LOVE</div>
+        <br>
+        <br> Text here saying may things. Writing sentences in a satisfying shape<br>
+        Many things going on here. My name is Harper, introduce yourself.<br>
+        Try to convey a bit of mystery, but don't be too on the nose.<br><br>
+        More things to say? Maybe.<br>
+        Let's come up with some more things to say, things that function as decoration.
+      </div>
+          `,
+       
+        },
+        about: {
+          html: `
+            <p>I am a musician and writer from Brooklyn. </p>
+            <p></p>
+          `,
+          
+        },
+        music: {
+          html: `
+            <p></p>
+          `,
+       
+        },
+        lyrics: {
+          html: `
+            <p>
+              Moss <br>
+              Reach your hand in a bucket full <br>
+              of sloppy promoses of rot<br>
+              was it you or was it someone<br>
+              you couldn't have remembered having lost<br>
+              <br>
+              He brushed my shoulder<br>
+              she kissed my neck<br>
+              all these people<br>
+              scattered in water<br>
+              looking at the land life like innocent fish<br>
+              <br>
+              Squeeze the juice out the cosmic fruit<br>
+              growing out the edges of your garden<br>
+              you didn't mean to plant it<br>
+              you didn't know you had it<br>
+              but something was looking out for you<br>
+              <br>
+              Why go home early<br>
+              why race till death<br>
+              all these people<br>
+              loving isn't evil<br>
+              mossy loving people<br>
+              dancing in the cracks<br>
+              of the wall
+              </p>
+          `,
+         
+        },
+        writing: {
+          html: `
+            <p></p>
+          `,
+     
+        },
+        video: {
+          html: `
+            <p>Your video grid can go here.</p>
+          `,
+         
+        }
+      };
+
+      document.querySelectorAll(".menu a").forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const page = link.dataset.page;
+          const selected = pages[page];
+
+          // fade out
+          content.style.opacity = 0;
+
+          setTimeout(() => {
+            // swap content
+            content.innerHTML = selected.html;
+
+            // reset scroll to top
+            content.scrollTop = 0;
+
+            // change background
+            document.body.style.background = selected.bg;
+
+            // fade back in
+            content.style.opacity = 1;
+          }, 200);
+        });
+      });
+    </script>
+
+  </body>
 </html>
