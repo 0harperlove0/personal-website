@@ -1,87 +1,89 @@
-
-
-/* Reset + prevent whole page scrolling */
 html, body {
   height: 100%;
   margin: 0;
   overflow: hidden;
   font-family: 'Times New Roman', Times, serif;
   color: rgb(52, 53, 71);
-  font-size: 18px;
+  font-size: 20px;
   transition: background 0.5s ease;
-  background-color: rgb(248, 253, 255);;
+  background-color: rgb(248, 253, 255);
 }
 
-/* Layout grid */
+/* container no longer controls layout */
 .container {
   position: relative;
-  z-index: 1;
-  display: grid;
   height: 100vh;
-  grid-template-areas:
-    "header header"
-    "menu content"
-    "footer footer";
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: auto 1fr auto;
 }
 
-/* General spacing */
-.container > div {
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-/* Header */
+/* HEADER (fixed, top layer) */
 .header {
-  grid-area: header;
-  text-align: center;
+  position: fixed;
+  top: 20px;
+  left: 300px;
+  right: 40px;
+  z-index: 10;
 }
 
-/* Menu */
+/* MENU (fixed left) */
 .menu {
-  grid-area: menu;
-  margin-left: 80px;
-  margin-top: 30px;
+  position: fixed;
+  top: 120px;
+  left: 80px;
   line-height: 50px;
 }
 
-/* Content (SCROLLABLE AREA) */
+/* CONTENT (scrollable area) */
 .content {
-  grid-area: content;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 300px;
+  right: 40px;
+
   overflow-y: auto;
+  scrollbar-width: none;
+   -ms-overflow-style: none;
+  padding-top: 120px;   /* space for header */
   padding-right: 40px;
+  padding-bottom: 40px;
+
   line-height: 25px;
 }
 
-/* Footer */
-.footer {
-  grid-area: footer;
-  text-align: right;
-  padding-right: 40px;
-  margin-right: 30px;
+.content::-webkit-scrollbar {
+  display: none;
 }
 
-/* Typography */
+/* FOOTER (fixed bottom right) */
+.footer {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  text-align: right;
+}
+
+/* TEXT + LINKS */
 .title {
   font-size: 30px;
   text-decoration: underline;
   margin-bottom: 10px;
 }
 
-/* Links */
 a {
   color: inherit;
   text-decoration: underline;
   text-decoration-color: rgb(52, 53, 71);
 }
 
-a:hover {
-  color: rgb(163, 165, 194);
-  text-decoration-color: rgb(163, 165, 194);
+.underline {
+  text-decoration: underline;
 }
 
-/* Image */
+a:hover {
+  background-color: rgb(243, 255, 110);
+}
+
+/* IMAGES */
 img {
   width: 400px;
   max-width: 100%;
@@ -89,8 +91,12 @@ img {
   display: block;
 }
 
-/* Selection */
+/* SELECTION */
 ::selection {
   background-color: rgb(248, 253, 255);
   color: rgb(38, 32, 221);
+}
+
+.italic-text {
+  font-style: italic;
 }

@@ -78,7 +78,6 @@ const videos = [
   {
     hoverSwap: false,
     src: "images/water2.mp4",
-    link: "homepage.html"
   },
   
 ];
