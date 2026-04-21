@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+body {
+  margin: 0;
+  background-color: rgb(52, 52, 93);
+  margin: 0px;
+}
+
+#backButton {
+  position: fixed;   /* stays on top of everything */
+  top: 20px;
+  left: 20px;
+  z-index: 9999;     /* ensures it sits above videos */
+
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: "EB Garamond", serif;
+
+  background: rgba(212, 229, 209, 0.478);
+  padding: 8px 20px;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1200px, 1fr));
+  gap: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+video {
+  transition: filter 0.3s ease;
+  filter:grayscale(20%);
+}
+
+video:hover {
+  filter: brightness(80%) sepia(100%) hue-rotate(200deg);
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Base video styling */
+.tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover-swap layered videos */
+.tile video.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: opacity 0.4s ease;
+  pointer-events: none; /* prevents hover flicker issues */
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  display: block; /* important if it's an <a> */
+}
