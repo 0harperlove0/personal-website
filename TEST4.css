@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #111;
+}
+
+#canvas {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.video-item {
+  position: absolute;
+  cursor: grab;
+  opacity: 0.5;
+}
+
+.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  display: block;
+}
+
+.rect-sm {
+  width: 100px;
+  height: 600px;
+}
+
+.rect-md {
+  width: 80px;
+  height: 300px;
+}
+
+.rect-lol {
+  width: 300px;
+  height: 300px;
+}
+
+.rect-woosh {
+  width: 250px;
+  height: 250px;
+}
+
+.rect-lg {
+  width: 500px;
+  height: 500px;
+}
+
+.video-item {
+  left: var(--x);
+  top: var(--y);
+}
+
+.pos1 { --x: 10%; --y: 60%; }
+.pos2 { --x: 25%; --y: 25%; }
+.pos3 { --x: 40%; --y: 10%; }
+.pos4 { --x: 55%; --y: 70%; }
+.pos5 { --x: 70%; --y: 25%; }
+.pos6 { --x: 85%; --y: 25%; }
+
+
+#bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-item {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+
+  transform-origin: center;
+}
+
+#backButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  font-family: "EB Garamond", serif;
+
+  background: rgba(212, 229, 209, 0.478);
+  padding: 8px 20px;
+}
+
+#nextButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: "EB Garamond", serif;
+
+  background: rgba(212, 229, 209, 0.478);
+  padding: 8px 20px;
+}

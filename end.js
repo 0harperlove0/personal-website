@@ -1,7 +1,7 @@
 
 const videos = [
   {
-    src: "rainbowpark/rainbowpark.mp4"
+    src: "rainbowpark/sign.mp4"
   }
 ];
 
@@ -17,7 +17,6 @@ if (v.link) {
 }
   tile.className = "tile";
 
-  // If hoverSwap enabled → create 2 layered videos
   if (v.hoverSwap && v.sources?.length >= 2) {
     const vidA = document.createElement("video");
     const vidB = document.createElement("video");
@@ -50,7 +49,6 @@ if (v.link) {
     });
 
   } else {
-    // normal static video
     const video = document.createElement("video");
     video.src = v.src;
     video.autoplay = true;

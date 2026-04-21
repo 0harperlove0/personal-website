@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+}
+
+#collage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.stripe {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition:
+    flex 1.1s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 1.1s cubic-bezier(0.19, 1, 0.22, 1),
+    filter 0.6s ease;
+
+  filter: grayscale(50%) hue-rotate(120deg);
+
+  will-change: flex, transform;
+}
+
+.stripe:nth-child(1) { flex: 1; }
+.stripe:nth-child(2) { flex: 3; }
+.stripe:nth-child(3) { flex: 4.5; }
+.stripe:nth-child(4) { flex: 1.5; }
+.stripe:nth-child(5) { flex: 2.5; }
+.stripe:nth-child(6) { flex: 0.8; }
+.stripe:nth-child(7) { flex: 3; }
+.stripe:nth-child(8) { flex: 1.2; }
+.stripe:nth-child(9) { flex: 3.5; }
+.stripe:nth-child(10) { flex: 1; }
+.stripe:nth-child(11) { flex: .3; }
+.stripe:nth-child(12) { flex: 1.5; }
+.stripe:nth-child(13) { flex: 1.2; }
+
+.stripe:hover {
+  flex: 5;
+  transform: scale(1.03);
+  filter: grayscale(0%) hue-rotate(320deg) brightness(2);
+  z-index: 2; 
+}
+
+.stripe video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 1.1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.stripe:hover video {
+  transform: scale(1.05);
+}
+
+#backButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  font-family: "EB Garamond", serif;
+
+  background: rgba(212, 229, 209, 0.478);
+  padding: 8px 20px;
+}
+
+#nextButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-family: "EB Garamond", serif;
+
+  background: rgba(212, 229, 209, 0.478);
+  padding: 8px 20px;
+}

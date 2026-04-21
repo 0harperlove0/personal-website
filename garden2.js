@@ -29,7 +29,6 @@ const videos = [
   {
     
     src: "rainbowpark/flowers4.mp4",
-     link: "garden3.html"
   },
 ];
 
@@ -45,7 +44,7 @@ if (v.link) {
 }
   tile.className = "tile";
 
-  // If hoverSwap enabled → create 2 layered videos
+
   if (v.hoverSwap && v.sources?.length >= 2) {
     const vidA = document.createElement("video");
     const vidB = document.createElement("video");
@@ -78,7 +77,6 @@ if (v.link) {
     });
 
   } else {
-    // normal static video
     const video = document.createElement("video");
     video.src = v.src;
     video.autoplay = true;
