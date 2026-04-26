@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="clemtest.css">
+</head>
+<body>
+
+    <!-- Header (over background) -->
+    <header>
+        <h1>clementine</h1>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="container">
+
+        <!-- Sidebar Menu -->
+        <nav class="sidebar">
+            <a href="#" onclick="showContent('page1')">
+                <img src="clem/doodle1.jpg" alt="Page 1">
+                <p>us</p>
+            </a>
+
+            <a href="#" onclick="showContent('page2')">
+                <img src="clem/doodle3.jpg" alt="Page 2">
+                <p>music</p>
+            </a>
+
+            <a href="#" onclick="showContent('page3')">
+                <img src="clem/doodle2.jpg" alt="Page 3">
+                <p>video</p>
+            </a>
+        </nav>
+
+        <!-- Content Area -->
+        <main class="content">
+            <div id="page1" class="page active">
+                <br>
+                <br>
+                <img src="clem/us.jpg"><br><br>
+
+                hey there! we're clementine.
+            </div>
+
+            <div id="page2" class="page">
+                <h2></h2>
+                <br>
+                <p><img src="clem/EP.jpg"><br>
+             FEAR THE BIRD, 2026. LISTEN.</p>
+            </div>
+
+            <div id="page3" class="page">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/b4sLmnL_m5w?si=e15ojKWsHmvIqYkv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Simple JS for switching content -->
+    <script>
+        function showContent(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

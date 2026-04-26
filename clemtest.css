@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background */
+body {
+    font-family: "EB Garamond", serif;
+    background-image: url('clem/birds!.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Header OVER background */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    background: transparent;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    margin-top: 80px; /* prevents overlap with header */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 140px;
+    margin-top: 30px;
+}
+
+/* Sidebar links (image + text button) */
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+/* Images */
+.sidebar img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s;
+}
+
+/* Hover effect */
+.sidebar a:hover img {
+    transform: scale(1.05);
+    filter: hue-rotate(120);
+}
+
+/* Text under images */
+.sidebar p {
+    margin-top: 0px;
+    text-align: center;
+}
+
+/* ✅ FIXED CONTENT CENTERING */
+.content {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.content img {
+    width: 400px;   /* change this value */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Page switching */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+::selection {
+  background-color: transparent;
+  color: rgb(237, 118, 44);
+}
