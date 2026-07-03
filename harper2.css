@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #111;
+}
+
+#canvas {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.video-item {
+  position: absolute;
+  cursor: grab;
+  transform-origin: center;
+  opacity: 0.8;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-item video {
+  width: 700px;
+  height: 700px;
+  pointer-events: none;
+  display: block;
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* IMPORTANT:
+   establish positioning context
+*/
+.middle-video {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+}
+
+/* overlay locked to video */
+.menu-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* menu items */
+
+.menu-item {
+  position: absolute;
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+  font-family: "EB Garamond", serif;
+  z-index: 10;
+
+  transition: opacity 0.2s ease;
+}
+
+.menu-item:hover {
+  opacity: 0.6;
+}
+
+/* RANDOM POSITIONS INSIDE VIDEO */
+
+.item1 {
+  top: 90px;
+  left: 120px;
+}
+
+.item2 {
+  top: 240px;
+  left: 430px;
+}
+
+.item3 {
+  top: 500px;
+  left: 180px;
+}
+
+.item4 {
+  top: 360px;
+  left: 520px;
+}

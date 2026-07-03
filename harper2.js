@@ -2,6 +2,7 @@ const items = document.querySelectorAll('.video-item');
 const bgVideo = document.getElementById("bg-video");
 
 let highestZ = 1;
+
 let blueMode = false;
 
 items.forEach(item => {
@@ -93,9 +94,7 @@ items.forEach(item => {
         `;
       }
 
-      if (bgVideo) {
-        bgVideo.style.filter = filter;
-      }
+      bgVideo.style.filter = filter;
 
       document.querySelectorAll(".video-item video").forEach(v => {
         v.style.filter = filter;
@@ -104,50 +103,5 @@ items.forEach(item => {
     });
 
   }
-
-});
-
-
-/* YELLOW FLOWERS VIDEO CHANGES BACKGROUND */
-
-document.addEventListener('click', (e) => {
-
-  const yellowFlowers = e.target.closest('#yellow-flowers');
-
-  if (!yellowFlowers) return;
-
-  const bgVideo = document.getElementById('bg-video');
-
-  if (!bgVideo) return;
-
-  document.body.style.backgroundColor = 'transparent';
-
-  if (bgVideo.style.opacity === '1') {
-    bgVideo.style.opacity = '0';
-    document.body.style.backgroundColor = 'rgb(15,15,15)';
-  } else {
-    bgVideo.style.opacity = '1';
-  }
-
-});
-
-
-/* CURSOR TRAIL */
-
-const container = document.getElementById('trail-holder');
-
-document.addEventListener('mousemove', (e) => {
-
-  const dot = document.createElement('div');
-  dot.classList.add('trail-dot');
-
-  dot.style.left = `${e.clientX}px`;
-  dot.style.top = `${e.clientY}px`;
-
-  container.appendChild(dot);
-
-  setTimeout(() => {
-    dot.remove();
-  }, 600);
 
 });

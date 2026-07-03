@@ -1,100 +1,181 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+/* RESET */
 
-/* Reset */
+@font-face {
+  font-family: 'Hershey-Noailles-Times';
+  /* Look for the font inside your Mac's Font Book directly */
+  src: local('Hershey-Noailles-Times');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Background */
-body {
-    font-family: "EB Garamond", serif;
-    background-image: url('clem/birds!.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+/* PAGE */
 
-/* Header OVER background */
+
+
+/* HEADER */
+
 header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 30px;
-    padding: 10px;
-    color: rgb(0, 0, 0);
-    background: transparent;
-}
+    height: 100px;
+    color: rgb(255, 255, 255);
 
-/* Layout */
-.container {
     display: flex;
-    margin-top: 80px; /* prevents overlap with header */
+    align-items: center;
+    justify-content: center;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 150px;
+header h1 {
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+/* MENU AREA */
+
+.menu-container {
+    position: relative;
+    width: 800px;
+    height: 800px;
+
+    margin: -50px auto 0;
+
+    border-radius: 50%;
+}
+
+.footer {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  text-align: right;
+  font-style: italic;
+  font-size: 18px;
+  color: white;
+}
+
+/* MENU ITEMS */
+
+.menu-item {
+    position: absolute;
+
+    width: 140px;
+    text-decoration: none;
+    color: #ffffff;
+
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-left: 140px;
-    margin-top: 30px;
+    align-items: center;
+
+    transition: transform 0.3s;
 }
 
-/* Sidebar links (image + text button) */
-.sidebar a {
-    text-decoration: none;
-    color: black;
-    text-align: center;
-}
-
-/* Images */
-.sidebar img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.2s;
-}
-
-/* Hover effect */
-.sidebar a:hover img {
-    transform: scale(1.05);
-    filter: hue-rotate(120);
-}
-
-/* Text under images */
-.sidebar p {
-    margin-top: 0px;
-    text-align: center;
-}
-
-/* ✅ FIXED CONTENT CENTERING */
-.content {
-    position: absolute;
-    top: 150px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-}
-
-.content img {
-    width: 400px;   /* change this value */
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-/* Page switching */
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
+.menu-item:hover {
+    filter: opacity(50%);
 }
 
 ::selection {
   background-color: transparent;
-  color: rgb(237, 118, 44);
+  color: rgb(255, 236, 33);
+}
+
+.menu-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+
+}
+
+.menu-item span {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*
+    INDIVIDUAL POSITIONS
+
+    Change these values independently
+    to move each item anywhere.
+*/
+
+.item1 { /* top */
+    left: 325px;
+    top: 80px;
+}
+
+.item2 { /* upper right */
+    left: 510px;
+    top: 230px;
+}
+
+.item3 { /* lower right */
+    left: 440px;
+    top: 435px;
+}
+
+.item4 { /* lower left */
+    left: 210px;
+    top: 435px;
+}
+
+.item5 { /* upper left */
+    left: 140px;
+    top: 230px;
+}
+
+body {
+    font-family: 'Hershey-Noailles-Times';
+    background-image: url("clem/clemsky.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden; /* prevents scrolling */
+}
+
+.content {
+    padding-top: 100px;
+    width: 800px;
+    margin: 20px auto 0;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    padding: 40px;
+}
+
+.back-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.live {
+    width: 600px;
+    margin: auto;
+}
+
+.show {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.mv :hover{
+    filter: hue-rotate(150deg);
+}
+
+.mv{
+    padding: 20px;
+}
+
+.EP :hover{
+    filter: hue-rotate(180deg);
+}
+
+.EP{
+    padding: 5px;
 }

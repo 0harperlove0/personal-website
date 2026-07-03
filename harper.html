@@ -7,30 +7,42 @@
     <link rel="stylesheet" href="harper.css">
   </head>
 
-  <body class="home">
+ <body class="home">
+
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="images/fish.mp4" type="video/mp4">
+  </video>
+
+  <div id="trail-holder"></div>
 
     <div class="container">
       
       <div class="header">
-        <h2>HARPER LOVE is a musician, writer, and artist from Brooklyn.</h2>
+        <h2>HARPER LOVE</h2>
       </div>
 
       <div class="menu">
         <a href="#" data-page="home">Home</a><br>
-        <a href="#" data-page="music">Music</a><br>
-        <a href="#" data-page="lyrics">Lyrics</a><br>
-        <a href="#" data-page="writing">Writing</a><br>
-        <a href="#" data-page="video">Video</a><br>
-        <a href="#" data-page="other">Other</a><br>
+        <a href="#" data-page="music">Listen</a><br>
+        <a href="#" data-page="lyrics">Read</a><br>
+        <a href="#" data-page="video">Watch</a><br>
+        <a href="#" data-page="Self">Self</a><br>
+         <a href="#" data-page="Mail">Mail</a><br>
       </div>
+
+      
 
       <!-- SCROLLABLE CONTENT -->
       <div class="content" id="content">
-        Harper releases music as herself and with her band, Clementine. 
-        Her reported work includes profiles, edited interviews, and arts pieces.
-        She also writes fiction.
-        She has made two short documentaries.
-        She has a brown goldendoodle named Charley.
+        
+        <div class="video">
+       <video id="yellow-flowers" autoplay muted loop playsinline width="100%">
+  <source src="images/fish3.mp4" type="video/mp4">
+  </video></div>
+ 
+
+
+        
       </div>
 
       <div class="footer">
@@ -48,12 +60,13 @@
       const pages = {
         home: {
           html: `
-        Harper releases music as herself and with her band, Clementine. 
-        Her reported work includes profiles, edited interviews, and arts pieces. 
-        She also writes fiction. 
-        She has made two short documentaries.
-        She has a brown goldendoodle named Charley.
-      </div>
+           <div class=video>
+          <video id="yellow-flowers" autoplay muted loop playsinline width="100%">
+  <source src="images/fish3.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+ 
           `,
        
         },
@@ -67,10 +80,10 @@
         music: {
           html: `
             <p>
-              <img src="images/album.jpg">
-              HARPER LOVE, 2026. LISTEN.<br><br>
-              <img src="clem/EP.jpg">
-             FEAR THE BIRD, 2026. LISTEN. <br>
+              <img src="images/album.jpg" class="record">
+              HARPER LOVE, 2026. <br><br>
+              <img src="clem/EP.jpg" class="record">
+             FEAR THE BIRD, 2026. <br>
               </p>
           `,
        
@@ -257,43 +270,67 @@
           `,
          
         },
-        writing: {
-          html: `
-            <p> <span class="underline">Nonfiction </span><br>
-            / "On the Brink of Pure Consciousness" ... 
-            <span class="italic-text">Yale Daily News Magazine </span> ... (11.14.23) <br> 
-            / "Staying Home to Write: Talking Process with Sheila Heti" ... 
-            <span class="italic-text">Yale Daily News Magazine </span> ... (02.28.23) <br><br>
-            <p> <span class="underline">Interviews</span><br>
-            / "Painting Towards a New Order" ... 
-            <span class="italic-text">Yale Daily News Magazine </span> ... (12.10.25) <br> 
-            / "Echoes of Memory" ... 
-            <span class="italic-text">Yale Daily News Magazine </span> ... (03.04.25) <br> 
-          `,
-     
-        },
+        
         video: {
           html: `
-            <p><iframe width="560" height="315" 
+            <p>
+             
+              <iframe width="560" class="youtube-video" height="315" 
+              src="https://www.youtube.com/embed/b4sLmnL_m5w?si=GzO_k3_W8klgKWk0" 
+              title="YouTube video player" frameborder="0" allow="accelerometer; 
+              autoplay; clipboard-write; encrypted-media; gyroscope; 
+              picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen></iframe>
+               <p>"Call Me When You're Home" Official Music Video</p>
+              <br><br><br>
+            
+              <iframe class="youtube-video" width="560" height="315" 
         src="https://www.youtube.com/embed/lhFRsF48e-M?si=LnHS2pvElxH8okA5" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
-</iframe> <br>
-In Spring 2024, I made a documentary profile on the New Haven based artist Julie Fraenkel. 
+</iframe> 
+
+  <p>"All Of This Is Who I Am"</p><br>
+
 </p>
           `,
           
          
         },
 
-        other: {
+        Self: {
           html: `
-            <p></p>
+           
+          <p>
+             
+              <img id=middle src="images/harper2.jpg"> <br><br>
+           
+              </p>
+
           `,
+
+          
+     
+        },
+
+        Mail: {
+          html: `
+           
+          <p>
+             
+              Sign up for the mailing list.
+              </p>
+
+          `,
+
+          
+     
+        },
+
         
-        }
+
       };
 
       document.querySelectorAll(".menu a").forEach(link => {
@@ -322,6 +359,8 @@ In Spring 2024, I made a documentary profile on the New Haven based artist Julie
         });
       });
     </script>
+
+     <script src="harper.js"></script>
 
   </body>
 </html>

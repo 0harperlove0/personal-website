@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Collage</title>
+  <link rel="stylesheet" href="harper2.css">
+</head>
+<body>
+
+<video id="bg-video" autoplay loop muted playsinline>
+  <source src="rainbowpark/trees5.mp4" type="video/mp4">
+</video>
+
+<div id="canvas">
+
+  <div class="video-item">
+    <video src="rainbowpark/green17.mp4" autoplay loop muted></video>
+  </div>
+
+  <!-- MIDDLE VIDEO -->
+  <div class="video-item middle-video">
+
+    <video src="rainbowpark/green18.mp4" autoplay loop muted></video>
+
+    <!-- MENU ITEMS INSIDE VIDEO -->
+    <div class="menu-overlay">
+      <a href="page1.html" class="menu-item item1">forest</a>
+      <a href="page2.html" class="menu-item item2">memory</a>
+      <a href="page3.html" class="menu-item item3">echo</a>
+      <a href="page4.html" class="menu-item item4">dream</a>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="harper2.js"></script>
+</body>
+</html>

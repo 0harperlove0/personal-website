@@ -3,70 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="clemtest.css">
 </head>
 <body>
 
-    <!-- Header (over background) -->
     <header>
-        <h1>clementine</h1>
+        <h1>clementine, the band</h1>
     </header>
 
-    <!-- Main Layout -->
-    <div class="container">
+    <main>
 
-        <!-- Sidebar Menu -->
-        <nav class="sidebar">
-            <a href="#" onclick="showContent('page1')">
-                <img src="clem/doodle1.jpg" alt="Page 1">
-                <p>us</p>
-            </a>
+      <div class="menu-container" id="menu">
 
-            <a href="#" onclick="showContent('page2')">
-                <img src="clem/doodle3.jpg" alt="Page 2">
-                <p>music</p>
-            </a>
+    <a href="#" class="menu-item item1" onclick="showPage('video'); return false;">
+        <img src="clem/ball.jpg" alt="Video">
+        <span>* video</span>
+    </a>
 
-            <a href="#" onclick="showContent('page3')">
-                <img src="clem/doodle2.jpg" alt="Page 3">
-                <p>video</p>
-            </a>
-        </nav>
+    <a href="#" class="menu-item item2" onclick="showPage('live'); return false;">
+        <img src="clem/birds!.jpg" alt="Live">
+        <span>* live</span>
+    </a>
 
-        <!-- Content Area -->
-        <main class="content">
-            <div id="page1" class="page active">
-                <br>
-                <br>
-                <img src="clem/us.jpg"><br><br>
+    <a href="#" class="menu-item item3" onclick="showPage('about'); return false;">
+        <img src="clem/evie2.jpg" alt="About">
+        <span>* about</span>
+    </a>
 
-                hey there! we're clementine.
-            </div>
+    <a href="#" class="menu-item item4" onclick="showPage('contact'); return false;">
+        <img src="clem/tree!.jpg" alt="Lyrics">
+        <span>* contact</span>
+    </a>
 
-            <div id="page2" class="page">
-                <h2></h2>
-                <br>
-                <p><img src="clem/EP.jpg"><br>
-             FEAR THE BIRD, 2026. LISTEN.</p>
-            </div>
+    <a href="#" class="menu-item item5" onclick="showPage('music'); return false;">
+        <img src="clem/neveharper.jpg" alt="Music">
+        <span>* music</span>
+    </a>
 
-            <div id="page3" class="page">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/b4sLmnL_m5w?si=e15ojKWsHmvIqYkv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        </main>
+</div>
 
-    </div>
+<div id="content" class="content"></div>
 
-    <!-- Simple JS for switching content -->
-    <script>
-        function showContent(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
+        </div>
 
-            document.getElementById(pageId).classList.add('active');
-        }
-    </script>
+         <div class="footer">
+            <p>
+        
+          </p>
+      </div>
 
+    </main>
+
+<script src="clemtest.js"></script>
 </body>
 </html>
