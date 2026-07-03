@@ -31,7 +31,7 @@ about: `
 <br>Harper (left), Neve (middle), and Evie (right) are unfortunately stuck in the bodies of three lego figurines. 
 They get to be humans again when they sing in perfect harmony.
 </p>
-<button class="back-button" onclick="goBack()">← back</button>
+<button class="back-button" onclick="goBack()">back</button>
 `,
 
 contact: `
@@ -42,7 +42,7 @@ booking: @clementineband53@gmail.com <br>
           tiktok: @clementinetheband <br>
           </p>
 
-<button class="back-button" onclick="goBack()">← back</button>
+<button class="back-button" onclick="goBack()">back</button>
 
 `,
 
@@ -54,7 +54,7 @@ music: `
 Fear the Bird, 2026
 <br>
 </p>
-<button class="back-button" onclick="goBack()">← back</button>
+<button class="back-button" onclick="goBack()">back</button>
 `
 
 };

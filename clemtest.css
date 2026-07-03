@@ -73,7 +73,7 @@ header h1 {
 }
 
 .menu-item:hover {
-    filter: opacity(50%);
+    filter: opacity(50%) hue-rotate(180deg);
 }
 
 ::selection {
@@ -151,6 +151,13 @@ body {
     font-family: inherit;
     font-size: 18px;
     cursor: pointer;
+    color: white;
+    border-color: white;
+}
+
+.back-button:hover{
+    color: rgb(156, 255, 255);
+    border-color: rgb(156, 255, 255);
 }
 
 .live {
